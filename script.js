@@ -10,9 +10,13 @@
 const CONFIG = {
   graduateName: "Nguyễn Thị Yến Nhi",
   graduateMajor: "Tân Cử Nhân · Trường Đại học Văn Hiến",
+  phone: "0901 234 567", // Thay số điện thoại của bạn vào đây
+  facebookUrl: "https://www.facebook.com", // Dán đường link Facebook của bạn vào đây
+  facebookName: "Nguyễn Thị Yến Nhi", // Tên hiển thị Facebook
   photoUrl: "assets/yen-nhi.jpg",
-  date: "2026-11-18", // Định dạng YYYY-MM-DD (Bạn có thể đổi ngày theo lịch thực tế của trường)
-  time: "08:00 – 11:30",
+  date: "2026-11-17", // Định dạng YYYY-MM-DD (Bạn có thể đổi ngày theo lịch thực tế của trường)
+  time: "14:00 – 16:30",
+  startTime: "14:00:00", // Giờ bắt đầu để tính đồng hồ đếm ngược
   location: "Trường Đại học Văn Hiến (VHU)",
   address: "613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP. Hồ Chí Minh",
   // Link bản đồ Google Maps nhúng và link chỉ đường
@@ -84,6 +88,18 @@ $("eventAddress").textContent = CONFIG.address;
 $("yearPeek").textContent = CONFIG.classYear;
 $("yearBottom").textContent = CONFIG.classYear;
 
+// Cập nhật SĐT và link Facebook của Tân Cử Nhân
+if ($("graduatePhone")) {
+  $("graduatePhone").textContent = CONFIG.phone;
+  $("graduatePhone").href = `tel:${CONFIG.phone.replace(/[\s\.\-]+/g, "")}`;
+}
+if ($("graduateFacebook")) {
+  $("graduateFacebook").href = CONFIG.facebookUrl;
+}
+if ($("graduateFbName")) {
+  $("graduateFbName").textContent = CONFIG.facebookName || CONFIG.graduateName;
+}
+
 // Cập nhật bản đồ Google Maps và nút chỉ đường
 if ($("mapFrame")) {
   $("mapFrame").src = CONFIG.mapEmbedUrl;
@@ -100,7 +116,50 @@ if (!Number.isNaN(eventDate.getTime())) {
   $("dateYear").textContent = eventDate.getFullYear();
 }
 
-// 3. HIỆU ỨNG MỞ PHONG BÌ THƯ MỜI
+// 3. ĐỒNG HỒ ĐẾM NGƯỢC THỜI GIAN ĐẾN LỄ TỐT NGHIỆP
+function initCountdown() {
+  const cdDays = $("cdDays");
+  const cdHours = $("cdHours");
+  const cdMinutes = $("cdMinutes");
+  const cdSeconds = $("cdSeconds");
+  const timerEl = $("countdownTimer");
+  const doneEl = $("countdownDone");
+
+  if (!cdDays || !cdHours || !cdMinutes || !cdSeconds) return;
+
+  const startTimeStr = CONFIG.startTime || "08:00:00";
+  const targetDate = new Date(`${CONFIG.date}T${startTimeStr}`);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate.getTime() - now.getTime();
+
+    if (diff <= 0) {
+      if (timerEl) timerEl.style.display = "none";
+      if (doneEl) {
+        doneEl.style.display = "block";
+        doneEl.textContent = `🎓 Khoảnh khắc trọng đại đã đến! Chúc mừng Tân Cử Nhân ${CONFIG.graduateName}! 🎓`;
+      }
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    cdDays.textContent = String(days).padStart(2, "0");
+    cdHours.textContent = String(hours).padStart(2, "0");
+    cdMinutes.textContent = String(minutes).padStart(2, "0");
+    cdSeconds.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
+}
+initCountdown();
+
+// 4. HIỆU ỨNG MỞ PHONG BÌ THƯ MỜI
 const stage = $("invitationStage");
 const content = $("letterContent");
 const openButton = $("openInvite");

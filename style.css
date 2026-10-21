@@ -747,6 +747,118 @@ h2 {
   line-height: 1.5;
 }
 
+.contact-link {
+  color: var(--rose-deep);
+  text-decoration: none;
+  border-bottom: 1px dashed #dca7b6;
+  padding-bottom: 1px;
+  transition: all .2s ease;
+}
+
+.contact-link:hover {
+  color: #632039;
+  border-bottom-color: #8d3f5a;
+  border-bottom-style: solid;
+}
+
+/* =========================================================
+   PHẦN ĐẾM NGƯỢC THỜI GIAN (COUNTDOWN TIMER)
+========================================================= */
+.countdown-section {
+  margin: 22px auto 26px;
+  max-width: 480px;
+}
+
+.countdown-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fff8fa 100%);
+  border: 1px solid #ebd3d7;
+  border-radius: 10px;
+  padding: 18px 14px 20px;
+  box-shadow: 0 8px 24px rgba(141, 63, 90, 0.06);
+  text-align: center;
+  position: relative;
+}
+
+.countdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #a5687d;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.countdown-star {
+  color: var(--gold);
+  font-size: 11px;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(5px, 2vw, 12px);
+  margin-top: 14px;
+}
+
+.time-block {
+  flex: 1;
+  max-width: 80px;
+  background: #ffffff;
+  border: 1px solid #ebd6dc;
+  border-radius: 8px;
+  padding: 10px 4px 8px;
+  box-shadow: 0 4px 12px rgba(141, 63, 90, 0.06);
+  text-align: center;
+  transition: transform .2s ease;
+}
+
+.time-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(141, 63, 90, 0.12);
+}
+
+.time-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(23px, 5.5vw, 32px);
+  line-height: 1;
+  color: #9b526b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.time-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #b38896;
+  letter-spacing: .16em;
+  display: block;
+}
+
+.time-sep {
+  font-size: 18px;
+  color: #c592a3;
+  font-weight: 600;
+  line-height: 1;
+  padding-bottom: 12px;
+}
+
+.countdown-message {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #8d3f5a;
+  margin-top: 12px;
+  line-height: 1.6;
+  font-weight: 600;
+  background: #fff0f3;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px dashed #e8b6c4;
+}
+
 /* =========================================================
    PHẦN BẢN ĐỒ GHIM VỊ TRÍ (GOOGLE MAPS EMBED)
 ========================================================= */
