@@ -17,11 +17,9 @@ const CONFIG = {
   date: "2026-11-17", // Định dạng YYYY-MM-DD (Bạn có thể đổi ngày theo lịch thực tế của trường)
   time: "14:00 – 16:30",
   startTime: "14:00:00", // Giờ bắt đầu để tính đồng hồ đếm ngược
-  location: "Trường Đại học Văn Hiến (VHU)",
-  address: "613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP. Hồ Chí Minh",
-  // Link bản đồ Google Maps nhúng và link chỉ đường
-  mapEmbedUrl: "https://www.google.com/maps?q=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+V%C4%83n+Hi%E1%BA%BFn,+613+%C3%82u+C%C6%A1,+Ph%C3%BA+Trung,+T%C3%A2n+Ph%C3%BA,+TP.HCM&t=&z=16&ie=UTF8&iwloc=&output=embed",
-  mapDirectionUrl: "https://maps.google.com/?q=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+V%C4%83n+Hi%E1%BA%BFn,+613+%C3%82u+C%C6%A1,+Ph%C3%BA+Trung,+T%C3%A2n+Ph%C3%BA,+H%E1%BB%93+Ch%C3%AD+Minh",
+  location: "Nhà hát Hòa Bình",
+  address: "240 Đường 3 Tháng 2, Phường 12, Quận 10, TP. Hồ Chí Minh",
+  mapDirectionUrl: "https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A1t+H%C3%B2a+B%C3%ACnh+240+%C4%90%C6%B0%E1%BB%9Dng+3+Th%C3%A1ng+2+Qu%E1%BA%ADn+10+TPHCM",
   classYear: "2026",
   musicUrl: "assets/graduation.mp3"
 };
@@ -100,12 +98,18 @@ if ($("graduateFbName")) {
   $("graduateFbName").textContent = CONFIG.facebookName || CONFIG.graduateName;
 }
 
-// Cập nhật bản đồ Google Maps và nút chỉ đường
-if ($("mapFrame")) {
-  $("mapFrame").src = CONFIG.mapEmbedUrl;
-}
+// Cập nhật bản đồ và các nút chỉ đường đến Nhà hát Hòa Bình
 if ($("btnDirection")) {
   $("btnDirection").href = CONFIG.mapDirectionUrl;
+}
+if ($("mapLinkWrapper")) {
+  $("mapLinkWrapper").href = CONFIG.mapDirectionUrl;
+}
+if ($("mapHeaderTitle")) {
+  $("mapHeaderTitle").textContent = CONFIG.location;
+}
+if ($("mapHeaderAddress")) {
+  $("mapHeaderAddress").textContent = CONFIG.address;
 }
 
 // Cập nhật ngày tháng năm

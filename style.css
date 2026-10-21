@@ -927,18 +927,77 @@ h2 {
   box-shadow: 0 5px 14px rgba(158, 74, 102, 0.35);
 }
 
-.map-frame-container {
-  width: 100%;
-  height: 230px;
-  background: #f7eff1;
+.map-interactive-view {
+  display: block;
   position: relative;
+  overflow: hidden;
+  background: #f5f3ee;
+  text-decoration: none;
+  cursor: pointer;
+  aspect-ratio: 600 / 320;
 }
 
-.map-frame-container iframe {
+.map-visual-img {
   width: 100%;
   height: 100%;
-  border: 0;
+  object-fit: cover;
   display: block;
+  transition: transform .35s ease;
+}
+
+.map-interactive-view:hover .map-visual-img {
+  transform: scale(1.02);
+}
+
+.map-tap-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(141, 63, 90, 0.92);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.map-interactive-view:hover .map-tap-hint {
+  background: #732a44;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff7597;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(255, 117, 151, 0.7);
+  animation: pulse-ring 1.8s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(255, 117, 151, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 117, 151, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 117, 151, 0); }
+}
+
+.hint-arrow {
+  font-size: 11px;
+  transition: transform .25s ease;
+}
+
+.map-interactive-view:hover .hint-arrow {
+  transform: translateX(3px);
 }
 
 /* =========================================================
