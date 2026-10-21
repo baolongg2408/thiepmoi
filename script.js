@@ -10,7 +10,7 @@
 const CONFIG = {
   graduateName: "Nguyễn Thị Yến Nhi",
   graduateMajor: "Tân Cử Nhân · Trường Đại học Văn Hiến",
-  phone: "0901 234 567", // Thay số điện thoại của bạn vào đây
+  phone: "0935 888 706", // Thay số điện thoại của bạn vào đây
   facebookUrl: "https://web.facebook.com/yennhy2004", // Dán link trang cá nhân Facebook của bạn vào đây (Ví dụ: https://www.facebook.com/ten.cua.ban)
   facebookName: "Nguyễn Thị Yến Nhi", // Tên hiển thị Facebook
   photoUrl: "assets/yen-nhi.jpg",
