@@ -11,7 +11,7 @@ const CONFIG = {
   graduateName: "Nguyễn Thị Yến Nhi",
   graduateMajor: "Tân Cử Nhân · Trường Đại học Văn Hiến",
   phone: "0901 234 567", // Thay số điện thoại của bạn vào đây
-  facebookUrl: "https://www.facebook.com", // Dán đường link Facebook của bạn vào đây
+  facebookUrl: "https://web.facebook.com/yennhy2004", // Dán link trang cá nhân Facebook của bạn vào đây (Ví dụ: https://www.facebook.com/ten.cua.ban)
   facebookName: "Nguyễn Thị Yến Nhi", // Tên hiển thị Facebook
   photoUrl: "assets/yen-nhi.jpg",
   date: "2026-11-17", // Định dạng YYYY-MM-DD (Bạn có thể đổi ngày theo lịch thực tế của trường)
@@ -86,16 +86,41 @@ $("eventAddress").textContent = CONFIG.address;
 $("yearPeek").textContent = CONFIG.classYear;
 $("yearBottom").textContent = CONFIG.classYear;
 
-// Cập nhật SĐT và link Facebook của Tân Cử Nhân
+// Cập nhật SĐT và link Trang cá nhân Facebook của Tân Cử Nhân
 if ($("graduatePhone")) {
   $("graduatePhone").textContent = CONFIG.phone;
   $("graduatePhone").href = `tel:${CONFIG.phone.replace(/[\s\.\-]+/g, "")}`;
 }
-if ($("graduateFacebook")) {
-  $("graduateFacebook").href = CONFIG.facebookUrl;
-}
-if ($("graduateFbName")) {
-  $("graduateFbName").textContent = CONFIG.facebookName || CONFIG.graduateName;
+
+const fbLink = $("graduateFacebook");
+if (fbLink) {
+  // Làm sạch link: đảm bảo luôn dẫn đến trang cá nhân facebook.com (loại bỏ m.me nếu có)
+  let profileUrl = (CONFIG.facebookUrl || "https://www.facebook.com").trim();
+  profileUrl = profileUrl.replace("https://m.me/", "https://www.facebook.com/")
+                         .replace("http://m.me/", "https://www.facebook.com/")
+                         .replace("m.me/", "https://www.facebook.com/")
+                         .replace("messenger.com/t/", "facebook.com/");
+  if (!profileUrl.startsWith("http")) {
+    profileUrl = "https://" + profileUrl;
+  }
+
+  fbLink.href = profileUrl;
+  if ($("graduateFbName")) {
+    $("graduateFbName").textContent = CONFIG.facebookName || CONFIG.graduateName;
+  }
+
+  // Mở thẳng trang cá nhân trong ứng dụng Facebook trên điện thoại, tránh bị chuyển sang Messenger
+  fbLink.addEventListener("click", function(e) {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      e.preventDefault();
+      const fbAppUrl = `fb://facewebmodal/f?href=${encodeURIComponent(profileUrl)}`;
+      window.location.href = fbAppUrl;
+      window.setTimeout(() => {
+        window.open(profileUrl, "_blank");
+      }, 1000);
+    }
+  });
 }
 
 // Cập nhật bản đồ và các nút chỉ đường đến Nhà hát Hòa Bình
