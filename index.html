@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff4f6" />
+  <title>Thư mời tham dự Lễ tốt nghiệp — Nguyễn Thị Yến Nhi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hiệu ứng hạt trang trí nền -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="sparkle-field" aria-hidden="true"></div>
+
+  <!-- Nút điều khiển nhạc nổi cố định -->
+  <button class="floating-music-btn" id="floatingMusic" type="button" aria-label="Bật hoặc tắt nhạc nền" title="Bật/Tắt nhạc nền">
+    <div class="music-disc" id="musicDisc">
+      <span class="music-note-icon">🎵</span>
+    </div>
+    <div class="floating-soundwave" id="floatingWave">
+      <span></span><span></span><span></span>
+    </div>
+  </button>
+
+  <main>
+    <!-- GIAI ĐOẠN 1: PHONG BÌ THƯ MỜI -->
+    <section class="invitation-stage" id="invitationStage">
+      <div class="top-label"><span class="label-line"></span> A NEW CHAPTER BEGINS <span class="label-line"></span></div>
+      <div class="outer-title">
+        <p class="eyebrow">TRÂN TRỌNG KÍNH MỜI</p>
+        <h1>Thư mời tham dự<br><em>Lễ tốt nghiệp</em></h1>
+        <p class="recipient-preview">Gửi đến: <strong id="guestOutside">Bạn thân mến</strong></p>
+      </div>
+
+      <button class="envelope" id="openInvite" type="button" aria-label="Mở thư mời">
+        <div class="envelope-shadow"></div>
+        <div class="envelope-back"></div>
+        <div class="letter-peek">
+          <div class="letter-topline">CLASS OF <span id="yearPeek">2026</span></div>
+          <div class="mini-cap">🎓</div>
+          <div class="letter-peek-text">The beginning<br>of something beautiful</div>
+        </div>
+        <div class="envelope-left"></div>
+        <div class="envelope-right"></div>
+        <div class="envelope-bottom"></div>
+        <div class="envelope-flap"></div>
+        <div class="wax-seal"><span>✦</span></div>
+        <div class="envelope-hint"><span class="hint-dot"></span> Chạm để mở thư <span class="hint-dot"></span></div>
+      </button>
+      <p class="small-note">Một lời mời nhỏ · Một cột mốc đáng nhớ</p>
+    </section>
+
+    <!-- GIAI ĐOẠN 2: NỘI DUNG THƯ MỜI CHI TIẾT -->
+    <section class="letter-content" id="letterContent" aria-hidden="true">
+      <div class="letter-paper">
+        <div class="paper-corner corner-tl">✦</div><div class="paper-corner corner-tr">✦</div>
+        <div class="paper-corner corner-bl">✦</div><div class="paper-corner corner-br">✦</div>
+        
+        <div class="content-inner">
+          <div class="crest"><span class="crest-star">✦</span><span class="crest-cap">🎓</span></div>
+          <p class="eyebrow reveal">A MILESTONE WORTH CELEBRATING</p>
+          <h2 class="reveal">Thư mời tham dự<br><em>Lễ Tốt Nghiệp</em></h2>
+          <div class="ornament reveal"><span></span> ❦ <span></span></div>
+          
+          <p class="dear reveal">Thân gửi <strong id="guestInside">Bạn thân mến</strong>,</p>
+          <p class="intro reveal">Sau những năm tháng miệt mài học tập, nỗ lực và trưởng thành dưới mái trường Đại học, mình đã sẵn sàng khép lại một hành trình thanh xuân tuyệt đẹp và mở ra chương mới của cuộc đời. Mình rất vinh hạnh và hạnh phúc nếu bạn có thể đến chung vui, chụp những tấm hình kỷ niệm và lưu giữ khoảnh khắc đặc biệt này cùng mình.</p>
+
+          <!-- VỊ TRÍ TẤM ẢNH CHỦ BUỔI LỄ -->
+          <div class="portrait-section reveal">
+            <div class="portrait-card">
+              <div class="portrait-border-ornament ornament-tl">✦</div>
+              <div class="portrait-border-ornament ornament-tr">✦</div>
+              <div class="portrait-border-ornament ornament-bl">✦</div>
+              <div class="portrait-border-ornament ornament-br">✦</div>
+              
+              <div class="portrait-wrapper">
+                <img id="graduatePhoto" src="assets/yen-nhi.jpg" alt="Chân dung chủ buổi lễ - Nguyễn Thị Yến Nhi" class="portrait-image" loading="lazy" />
+                <div class="portrait-overlay"></div>
+              </div>
+              
+              <div class="portrait-caption">
+                <div class="portrait-tag-badge"><span>✦</span> TÂN CỬ NHÂN <span>✦</span></div>
+                <h3 class="portrait-name" id="portraitName">Nguyễn Thị Yến Nhi</h3>
+                <p class="portrait-sub" id="portraitSub">Tân Cử Nhân · Trường Đại học Văn Hiến</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- THẺ THÔNG TIN SỰ KIỆN -->
+          <div class="event-card reveal">
+            <div class="event-heading">
+              <span>THÔNG TIN BUỔI LỄ</span>
+              <span class="event-star">✦</span>
+            </div>
+            
+            <div class="event-date">
+              <span class="date-day" id="dateDay">15</span>
+              <span class="date-month">
+                <b id="dateMonth">THÁNG 11</b>
+                <small id="dateYear">2026</small>
+              </span>
+            </div>
+            
+            <div class="event-divider"></div>
+            
+            <div class="event-row">
+              <span class="event-icon">◷</span>
+              <div>
+                <small>THỜI GIAN</small>
+                <strong id="eventTime">08:00 – 11:30</strong>
+              </div>
+            </div>
+            
+            <div class="event-row">
+              <span class="event-icon">⌖</span>
+              <div>
+                <small>ĐỊA ĐIỂM TỔ CHỨC</small>
+                <strong id="eventLocation">Trường Đại học Văn Hiến (VHU)</strong>
+                <p id="eventAddress">613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP. Hồ Chí Minh</p>
+              </div>
+            </div>
+            
+            <div class="event-row">
+              <span class="event-icon">✧</span>
+              <div>
+                <small>NHÂN VẬT CHÍNH</small>
+                <strong id="graduateName">Nguyễn Thị Yến Nhi</strong>
+                <p id="graduateMajor">Tân Cử Nhân · Trường Đại học Văn Hiến</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHẦN BẢN ĐỒ GHIM VỊ TRÍ ĐẠI HỌC VĂN HIẾN -->
+          <div class="map-section reveal">
+            <div class="map-card">
+              <div class="map-header">
+                <div class="map-header-text">
+                  <span class="map-pin-icon">📍</span>
+                  <div>
+                    <strong>Bản đồ địa điểm</strong>
+                    <small>Đại học Văn Hiến TP.HCM</small>
+                  </div>
+                </div>
+                <a id="btnDirection" href="https://maps.google.com/?q=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+V%C4%83n+Hi%E1%BA%BFn,+613+%C3%82u+C%C6%A1,+Ph%C3%BA+Trung,+T%C3%A2n+Ph%C3%BA,+H%E1%BB%93+Ch%C3%AD+Minh" target="_blank" rel="noopener noreferrer" class="btn-direction">
+                  <span>Mở Google Maps</span> ↗
+                </a>
+              </div>
+              <div class="map-frame-container">
+                <iframe 
+                  id="mapFrame" 
+                  src="https://www.google.com/maps?q=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+V%C4%83n+Hi%E1%BA%BFn,+613+%C3%82u+C%C6%A1,+Ph%C3%BA+Trung,+T%C3%A2n+Ph%C3%BA,+TP.HCM&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  title="Vị trí Trường Đại học Văn Hiến TP.HCM"
+                  loading="lazy" 
+                  allowfullscreen 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <p class="closing reveal">Sự hiện diện của bạn cùng những lời chúc tốt đẹp sẽ là món quà ý nghĩa nhất đối với mình trong ngày đặc biệt này!</p>
+          <p class="signature reveal">Hẹn gặp bạn nhé!<span>♡</span></p>
+          <div class="signature-name reveal">Nguyễn Thị Yến Nhi</div>
+          <div class="bottom-mark reveal"><span></span> CLASS OF <b id="yearBottom">2026</b> <span></span></div>
+
+          <!-- NÚT BẬT TẮT NHẠC Ở CUỐI THIỆP -->
+          <div class="music-bar reveal">
+            <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">
+              <span class="music-icon">♫</span>
+              <span id="musicLabel">Bật nhạc nền</span>
+              <span class="music-bars"><i></i><i></i><i></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- THẺ AUDIO PHÁT NHẠC NỀN -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/graduation.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- THÔNG BÁO TOAST -->
+  <div class="toast" id="toastMessage" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
