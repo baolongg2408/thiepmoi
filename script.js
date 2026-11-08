@@ -9,13 +9,13 @@
 
 const CONFIG = {
   graduateName: "Nguyễn Thị Yến Nhi",
-  graduateMajor: "Tân Cử Nhân · Trường Đại học Văn Hiến",
+  graduateMajor: " Trường Đại học Văn Hiến",
   phone: "0935 888 706", // Thay số điện thoại của bạn vào đây
   facebookUrl: "https://web.facebook.com/yennhy2004", // Dán link trang cá nhân Facebook của bạn vào đây (Ví dụ: https://www.facebook.com/ten.cua.ban)
-  facebookName: "Nguyễn Thị Yến Nhi", // Tên hiển thị Facebook
+  facebookName: "Nguyễn Yến Nhi", // Tên hiển thị Facebook
   photoUrl: "assets/yen-nhi.jpg",
   date: "2026-11-17", // Định dạng YYYY-MM-DD (Bạn có thể đổi ngày theo lịch thực tế của trường)
-  time: "14:00 – 16:30",
+  time: "16:00 – 17:00",
   startTime: "14:00:00", // Giờ bắt đầu để tính đồng hồ đếm ngược
   location: "Nhà hát Hòa Bình",
   address: "240 Đường 3 Tháng 2, Phường 12, Quận 10, TP. Hồ Chí Minh",
