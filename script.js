@@ -13,7 +13,7 @@ const CONFIG = {
   phone: "0935 888 706(Quốc Huy)", // Thay số điện thoại của bạn vào đây
   facebookUrl: "https://web.facebook.com/yennhy2004", // Dán link trang cá nhân Facebook của bạn vào đây (Ví dụ: https://www.facebook.com/ten.cua.ban)
   facebookName: "Nguyễn Yến Nhi", // Tên hiển thị Facebook
-  photoUrl: "assets/yennhi.jpg",
+  photoUrl: "assets/yennhi.jpg?v=20261109",
   date: "2026-11-17", // Định dạng YYYY-MM-DD (Bạn có thể đổi ngày theo lịch thực tế của trường)
   time: "16:00 – 17:00",
   startTime: "14:00:00", // Giờ bắt đầu để tính đồng hồ đếm ngược
