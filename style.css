@@ -207,6 +207,8 @@ h1 em, h2 em {
   color: var(--rose);
   font-weight: 500;
   font-style: italic;
+  display: flex;
+  justify-content: center;
 }
 
 .recipient-preview {
